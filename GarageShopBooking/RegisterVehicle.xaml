@@ -1,0 +1,32 @@
+﻿<Window x:Class="GarageShopBooking.RegisterVehicle"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GarageShopBooking"
+        mc:Ignorable="d"
+        Title="RegisterVehicle" Height="370.517" Width="300">
+    <Grid>
+        <Label x:Name="lblOwnerName" Content="Owner" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblRegNumber" Content="Reg Number" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblVehicleType" Content="Type of vehicle" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cboxVehicleType" HorizontalAlignment="Left" Margin="162,76,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.156,0.197" SelectionChanged="cboxVehicleType_SelectionChanged"/>
+        <TextBox x:Name="txtOwnerName" HorizontalAlignment="Left" Height="23" Margin="162,13,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtRegNumber" HorizontalAlignment="Left" Height="23" Margin="162,45,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnOK" Content="Ok" HorizontalAlignment="Left" Margin="114,310,0,0" VerticalAlignment="Top" Width="75" Click="btnOK_Click"/>
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="207,310,0,0" VerticalAlignment="Top" Width="75" Click="btnCancel_Click"/>
+        <Label x:Name="lblBrand" Content="Brand" HorizontalAlignment="Left" Margin="10,107,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblModelYear" Content="Model Year" HorizontalAlignment="Left" Margin="10,138,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.076,0.503"/>
+        <TextBox x:Name="txtBrand" HorizontalAlignment="Left" Height="23" Margin="162,110,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtModelYear" HorizontalAlignment="Left" Height="23" Margin="162,141,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblServiceLevel" Content="Service Level" HorizontalAlignment="Left" Margin="10,169,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cboxServiceLevel" HorizontalAlignment="Left" Margin="162,173,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblTires" Content="Tires" HorizontalAlignment="Left" Margin="10,200,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtTires" HorizontalAlignment="Left" Height="23" Margin="162,203,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblDoors" Content="Doors" HorizontalAlignment="Left" Margin="10,231,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtDoors" HorizontalAlignment="Left" Height="23" Margin="162,234,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblLift" Content="Lift type" HorizontalAlignment="Left" Margin="10,262,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtLiftType" HorizontalAlignment="Left" Height="23" Margin="162,265,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>

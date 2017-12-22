@@ -20,9 +20,39 @@ namespace GarageShopBooking
     /// </summary>
     public partial class MainWindow : Window
     {
+        RegisterVehicle registerVehicle;
+        GarageShop garageShop;
+
         public MainWindow()
         {
             InitializeComponent();
+            registerVehicle = new RegisterVehicle();
+            garageShop = new GarageShop();
+        }
+
+        private void btnRegisterVehicle_Click(object sender, RoutedEventArgs e)
+        {
+            registerVehicle.Show();
+        }
+
+        private void btnAddWorkDone_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnInfoVehicle_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnVehicleReady_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnCheckoutVehicle_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

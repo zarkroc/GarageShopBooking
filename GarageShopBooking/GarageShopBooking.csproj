@@ -54,6 +54,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Car.cs" />
+    <Compile Include="GarageShop.cs" />
+    <Compile Include="Owner.cs" />
+    <Compile Include="RegisterVehicle.xaml.cs">
+      <DependentUpon>RegisterVehicle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceLevel.cs" />
+    <Compile Include="Vehicle.cs" />
+    <Compile Include="VehicleTypes.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -66,6 +75,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="RegisterVehicle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
