@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace GarageShopBooking
 {
-    class Car : Vehicle
+    class Truck : Vehicle
     {
         private int doors, tires;
         private string liftType;
         private double height;
 
-        public Car(string regNumber, string brand, string modelYear, Owner owner, int doors, int tires, string liftType, double height) : base (regNumber, brand, modelYear, owner)
+        public Truck(string regNumber, string brand, string modelYear, Owner owner, int doors, int tires, string liftType, double height) : base(regNumber, brand, modelYear, owner)
         {
             this.doors = doors;
             this.tires = tires;

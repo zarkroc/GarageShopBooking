@@ -56,11 +56,16 @@
     </ApplicationDefinition>
     <Compile Include="Car.cs" />
     <Compile Include="GarageShop.cs" />
+    <Compile Include="MotorCycle.cs" />
     <Compile Include="Owner.cs" />
     <Compile Include="RegisterVehicle.xaml.cs">
       <DependentUpon>RegisterVehicle.xaml</DependentUpon>
     </Compile>
     <Compile Include="ServiceLevel.cs" />
+    <Compile Include="TowedSled.cs" />
+    <Compile Include="Trailer.cs" />
+    <Compile Include="Trailers.cs" />
+    <Compile Include="Truck.cs" />
     <Compile Include="Vehicle.cs" />
     <Compile Include="VehicleTypes.cs" />
     <Page Include="MainWindow.xaml">

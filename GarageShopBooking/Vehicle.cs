@@ -12,28 +12,12 @@ namespace GarageShopBooking
         private int milage, repairTime;
         private Owner owner;
 
-        public Vehicle()
+        public Vehicle(string regNumber, string brand, string modelYear,  Owner owner)
         {
-            this.RegNumber = String.Empty;
-            this.Brand = String.Empty;
-            this.ModelYear = String.Empty;
-            this.FormattedDate = String.Empty;
-            this.ServiceLevel = String.Empty;
-            this.owner = new Owner(String.Empty, String.Empty);
-            this.Milage = 0;
-            this.RepairTime = 0;
-        }
-
-        public Vehicle(string regNumber, string brand, string modelYear, string formattedDate, string serviceLevel, Owner owner, int milage, int repairTime)
-        {
-            this.RegNumber = regNumber;
-            this.Brand = brand;
-            this.ModelYear = modelYear;
-            this.FormattedDate = formattedDate;
-            this.ServiceLevel = serviceLevel;
+            this.regNumber = regNumber;
+            this.brand = brand;
+            this.modelYear = modelYear;
             this.owner = owner;
-            this.Milage = milage;
-            this.RepairTime = repairTime;
         }
 
         public int Milage { get => milage; set => milage = value; }
