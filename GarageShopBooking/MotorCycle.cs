@@ -11,7 +11,12 @@ namespace GarageShopBooking
         private int tires;
         private LiftType liftType;
 
-        public MotorCycle(string regNumber, string brand, string modelYear, Owner owner, int tires, LiftType liftType, double height) : base(regNumber, brand, modelYear, owner)
+        public MotorCycle() : base()
+        {
+
+        }
+
+        public MotorCycle(string regNumber, string brand, string modelYear, Owner owner, int tires, LiftType liftType) : base(regNumber, brand, modelYear, owner)
         {
             this.Tires = tires;
             this.LiftType = liftType;

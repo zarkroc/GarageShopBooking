@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GarageShopBooking
+﻿namespace GarageShopBooking
 {
-    public enum ServiceLevel
+    enum ServiceLevel
     {
         Large = 10000,
         Medium = 5000,

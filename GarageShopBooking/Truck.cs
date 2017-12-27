@@ -12,6 +12,11 @@ namespace GarageShopBooking
         private LiftType liftType;
         private double height;
 
+        public Truck() : base ()
+        {
+
+        }
+
         public Truck(string regNumber, string brand, string modelYear, Owner owner, int doors, int tires, LiftType liftType, double height) : base(regNumber, brand, modelYear, owner)
         {
             this.doors = doors;

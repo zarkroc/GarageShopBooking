@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GarageShopBooking
 {
-    public enum LiftType
+    enum LiftType
     {
         Heavy,
         Light

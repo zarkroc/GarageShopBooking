@@ -10,6 +10,11 @@ namespace GarageShopBooking
     {
         private LiftType liftType;
 
+        public Trailers () : base ()
+        {
+
+        }
+
         public Trailers(string regNumber, string brand, string modelYear, Owner owner, LiftType liftType) : base(regNumber, brand, modelYear, owner)
         {
             this.LiftType = liftType;

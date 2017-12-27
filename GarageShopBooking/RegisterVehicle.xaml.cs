@@ -26,6 +26,7 @@ namespace GarageShopBooking
         {
             txtOwnerFirstName.Text = String.Empty;
             txtOwnerLastName.Text = String.Empty;
+            txtMilage.Text = String.Empty;
             txtRegNumber.Text = String.Empty;
             txtModelYear.Text = String.Empty;
             txtBrand.Text = String.Empty;
@@ -36,36 +37,117 @@ namespace GarageShopBooking
             cboxLiftType.ItemsSource = Enum.GetValues(typeof(LiftType)).Cast<LiftType>();
             txtDoors.Visibility = Visibility.Hidden;
             lblDoors.Visibility = Visibility.Hidden;
+            lblMilage.Visibility = Visibility.Hidden;
+            txtMilage.Visibility = Visibility.Hidden;
         }
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
-            VehicleTypes vehicleType = (VehicleTypes)Enum.Parse(typeof(VehicleTypes), cboxVehicleType.SelectedValue.ToString(), true);
-            if (vehicleType == VehicleTypes.Trailer)
+            if (cboxVehicleType.SelectedIndex > -1)
             {
-                vehicle = new Trailer(ReadRegNumber(), ReadBrand(), ReadModelYear(), ReadOwnerName(), ReadTires(), ReadLiftType());
-            }
-            else if (vehicleType == VehicleTypes.Car)
-            {
-                vehicle = new Car(ReadRegNumber(), ReadBrand(), ReadModelYear(), ReadOwnerName(), ReadDoors(), ReadTires(), ReadLiftType(), ReadHeight());
-            }
-            else if (vehicleType == VehicleTypes.Truck)
-            {
-                vehicle = new Truck(ReadRegNumber(), ReadBrand(), ReadModelYear(), ReadOwnerName(), ReadDoors(), ReadTires(), ReadLiftType(), ReadHeight());
-            }
-            else if (vehicleType == VehicleTypes.TowedSled)
-            {
-                vehicle = new TowedSled(ReadRegNumber(), ReadBrand(), ReadModelYear(), ReadOwnerName(), ReadNumOfSkids(), ReadLiftType());
-            }
-            else if (vehicleType == VehicleTypes.MotorCycle)
-            {
-                vehicle = new MotorCycle(ReadRegNumber(), ReadBrand(), ReadModelYear(), ReadOwnerName(), ReadTires(), ReadLiftType(), ReadHeight());
-            }
+                VehicleTypes vehicleType = (VehicleTypes)Enum.Parse(typeof(VehicleTypes), cboxVehicleType.SelectedValue.ToString(), true);
+                if (vehicleType == VehicleTypes.Trailer)
+                {
+                    vehicle = new Trailer();
+                    if (!ReadRegNumber())
+                        MessageBox.Show("You need to specefiy a reg number");
+                    else if (!ReadOwnerName())
+                        MessageBox.Show("You need to specify an owner");
+                    else if (!ReadModelYear())
+                        MessageBox.Show("You need to specifye a model year");
+                    else if (!ReadBrand())
+                        MessageBox.Show("You need to specify a brand");
+                    Trailer trailer = vehicle as Trailer;
+                    trailer.LiftType = ReadLiftType();
+                    trailer.Tires = ReadTires();
+                    vehicle = trailer;
+                }
+                else if (vehicleType == VehicleTypes.Car)
+                {
+                    vehicle = new Car();
+                    if (!ReadRegNumber())
+                        MessageBox.Show("You need to specefiy a reg number");
+                    else if (!ReadOwnerName())
+                        MessageBox.Show("You need to specify an owner");
+                    else if (!ReadModelYear())
+                        MessageBox.Show("You need to specifye a model year");
+                    
+                    Car car = vehicle as Car;
+                    car.LiftType = ReadLiftType();
+                    car.Tires = ReadTires();
+                    car.Doors = ReadDoors();
+                    car.Height = ReadHeight();
+                    vehicle = car;
+                    if (int.TryParse(txtMilage.Text, out int milage))
+                    {
+                        vehicle.Milage = milage;
+                    }
+                    else
+                        MessageBox.Show("You forgot to specefiy the milage");
+                }
+                else if (vehicleType == VehicleTypes.Truck)
+                {
+                    vehicle = new Truck();
+                    if (!ReadRegNumber())
+                        MessageBox.Show("You need to specefiy a reg number");
+                    else if (!ReadOwnerName())
+                        MessageBox.Show("You need to specify an owner");
+                    else if (!ReadModelYear())
+                        MessageBox.Show("You need to specifye a model year");
 
-            vehicle.ServiceLevel = (ServiceLevel)Enum.Parse(typeof(ServiceLevel), cboxServiceLevel.SelectedValue.ToString(), true);
+                    Truck truck = vehicle as Truck;
+                    truck.LiftType = ReadLiftType();
+                    truck.Tires = ReadTires();
+                    truck.Doors = ReadDoors();
+                    truck.Height = ReadHeight();
+                    vehicle = truck;
+                    if (int.TryParse(txtMilage.Text, out int milage))
+                    {
+                        vehicle.Milage = milage;
+                    }
+                    else
+                        MessageBox.Show("You forgot to specefiy the milage");
+                }
+                else if (vehicleType == VehicleTypes.TowedSled)
+                {
+                    vehicle = new TowedSled();
+                    if (!ReadRegNumber())
+                        MessageBox.Show("You need to specefiy a reg number");
+                    else if (!ReadOwnerName())
+                        MessageBox.Show("You need to specify an owner");
+                    else if (!ReadModelYear())
+                        MessageBox.Show("You need to specifye a model year");
+                    TowedSled sled = vehicle as TowedSled;
+                    sled.NumOfSkids = ReadNumOfSkids();
+                    sled.LiftType = ReadLiftType();
 
-            this.DialogResult = true;
-            
+                }
+                else if (vehicleType == VehicleTypes.MotorCycle)
+                {
+                    vehicle = new MotorCycle();
+                    if (!ReadRegNumber())
+                        MessageBox.Show("You need to specefiy a reg number");
+                    else if (!ReadOwnerName())
+                        MessageBox.Show("You need to specify an owner");
+                    else if (!ReadModelYear())
+                        MessageBox.Show("You need to specifye a model year");
+
+                    MotorCycle mc = vehicle as MotorCycle;
+                    mc.LiftType = ReadLiftType();
+                    mc.Tires = ReadTires();
+                    vehicle = mc;
+                    if (int.TryParse(txtMilage.Text, out int milage))
+                    {
+                        vehicle.Milage = milage;
+                    }
+                    else
+                        MessageBox.Show("You forgot to specefiy the milage");
+                }
+                vehicle.ServiceLevel = (ServiceLevel)Enum.Parse(typeof(ServiceLevel), cboxServiceLevel.SelectedValue.ToString(), true);
+                this.DialogResult = true;
+            }
+            else
+                MessageBox.Show("You need to select a  Vehicle type");
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
@@ -73,44 +155,49 @@ namespace GarageShopBooking
             this.Close();
         }
 
-        private Owner ReadOwnerName()
+        private bool ReadOwnerName()
         {
             if (! String.IsNullOrEmpty(txtOwnerFirstName.Text) && ! String.IsNullOrEmpty(txtOwnerLastName.Text))
             {
-                return new Owner(txtOwnerFirstName.Text, txtOwnerLastName.Text);
+                Owner owner = new Owner(txtOwnerFirstName.Text, txtOwnerLastName.Text);
+                vehicle.Owner = owner;
+                return true;
             }
             else
-                return null;
+                return false;
         }
 
-        private string ReadRegNumber()
+        private bool ReadRegNumber()
         {
-            if (! String.IsNullOrEmpty(txtRegNumber.Text))
+            if (!String.IsNullOrEmpty(txtRegNumber.Text))
             {
-                return txtRegNumber.Text;
+                vehicle.RegNumber = txtRegNumber.Text;
+                return true;
             }
             else
-                return null;
+                return false;
         }
             
-        private string ReadModelYear()
+        private bool ReadModelYear()
         {
             if (! String.IsNullOrEmpty(txtModelYear.Text))
             {
-                return txtModelYear.Text;
+                vehicle.ModelYear = txtModelYear.Text;
+                return true;
             }
             else 
-                return null;
+                return false;
         }
 
-        private string ReadBrand()
+        private bool ReadBrand()
         {
             if (!String.IsNullOrEmpty(txtBrand.Text))
             {
-                return txtBrand.Text;
+                vehicle.Brand = txtBrand.Text;
+                return true;
             }
             else
-                return null;
+                return false;
         }
 
         private int ReadTires()
@@ -175,30 +262,40 @@ namespace GarageShopBooking
             {
                 txtDoors.Visibility = Visibility.Hidden;
                 lblDoors.Visibility = Visibility.Hidden;
+                lblMilage.Visibility = Visibility.Hidden;
+                txtMilage.Visibility = Visibility.Hidden;
                 lblTires.Content = "Tires";
             }
             else if (vehicleType == VehicleTypes.Car)
             {
                 txtDoors.Visibility = Visibility.Visible;
                 lblDoors.Visibility = Visibility.Visible;
+                lblMilage.Visibility = Visibility.Visible;
+                txtMilage.Visibility = Visibility.Visible;
                 lblTires.Content = "Tires";
             }
             else if (vehicleType == VehicleTypes.Truck)
             {
                 lblDoors.Visibility = Visibility.Hidden;
                 txtDoors.Visibility = Visibility.Hidden;
+                lblMilage.Visibility = Visibility.Visible;
+                txtMilage.Visibility = Visibility.Visible;
                 lblTires.Content = "Tires";
             }
             else if (vehicleType == VehicleTypes.TowedSled)
             {
                 txtDoors.Visibility = Visibility.Hidden;
                 lblDoors.Visibility = Visibility.Hidden;
+                lblMilage.Visibility = Visibility.Hidden;
+                txtMilage.Visibility = Visibility.Hidden;
                 lblTires.Content = "Skids";
             }
             else if (vehicleType == VehicleTypes.MotorCycle)
             {
                 txtDoors.Visibility = Visibility.Hidden;
                 lblDoors.Visibility = Visibility.Hidden;
+                lblMilage.Visibility = Visibility.Visible;
+                txtMilage.Visibility = Visibility.Visible;
                 lblTires.Content = "Tires";
             }
         }

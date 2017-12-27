@@ -29,5 +29,7 @@
         <ComboBox x:Name="cboxLiftType" HorizontalAlignment="Left" Margin="162,296,0,0" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="btnOK" Content="Ok" HorizontalAlignment="Left" Margin="114,353,0,0" VerticalAlignment="Top" Width="75" Click="btnOK_Click"/>
         <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="207,353,0,0" VerticalAlignment="Top" Width="75" Click="btnCancel_Click"/>
+        <Label x:Name="lblMilage" Content="Milage" HorizontalAlignment="Left" Margin="10,318,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtMilage" HorizontalAlignment="Left" Height="23" Margin="162,323,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>

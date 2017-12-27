@@ -10,6 +10,11 @@ namespace GarageShopBooking
     {
         private int tires;
 
+        public Trailer() : base()
+        {
+
+        }
+
         public Trailer(string regNumber, string brand, string modelYear, Owner owner, int tires, LiftType liftType) : base(regNumber, brand, modelYear, owner, liftType)
         {
             this.Tires = tires;

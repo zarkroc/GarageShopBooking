@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GarageShopBooking
 {
-    public enum VehicleTypes
+    enum VehicleTypes
     {
         Car,
         MotorCycle,

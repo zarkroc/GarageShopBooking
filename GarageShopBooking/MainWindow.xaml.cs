@@ -28,11 +28,13 @@ namespace GarageShopBooking
             InitializeComponent();
             registerVehicle = new RegisterVehicle();
             garageShop = new GarageShop();
+            InitializeGUI();
         }
 
         private void InitializeGUI()
         {
-
+            lstReadyVehicles.Items.Clear();
+            lstVehicles.Items.Clear();
         }
         private void UpdateGUI()
         {
@@ -110,6 +112,8 @@ namespace GarageShopBooking
                 MessageBox.Show("The price for repairs is : " + garageShop.CheckOutVehicle(lstReadyVehicles.SelectedIndex));
                 UpdateGUI();
             }
+            else
+                MessageBox.Show("No vehicle selected");
         }
     }
 }

@@ -13,9 +13,13 @@
         <Button x:Name="btnVehicleReady" Content="Vehicle Ready" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Width="94" Click="btnVehicleReady_Click"/>
         <Button x:Name="btnCheckoutVehicle" Content="Checkout Vehicle" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" Width="94" Click="btnCheckoutVehicle_Click"/>
         <Label x:Name="lblVehicleList" Content="Vehicle being worked on" HorizontalAlignment="Left" Margin="130,0,0,0" VerticalAlignment="Top"/>
-        <ListBox x:Name="lstVehicles" HorizontalAlignment="Left" Height="136" Margin="130,26,0,0" VerticalAlignment="Top" Width="377"/>
-        <Label x:Name="lblVehivlesReady" Content="Vehicles ready" HorizontalAlignment="Left" Margin="130,162,0,0" VerticalAlignment="Top"/>
-        <ListBox x:Name="lstReadyVehicles" HorizontalAlignment="Left" Height="121" Margin="130,188,0,0" VerticalAlignment="Top" Width="377"/>
+        <ListBox x:Name="lstVehicles" HorizontalAlignment="Left" Height="131" Margin="130,49,0,0" VerticalAlignment="Top" Width="377"/>
+        <Label x:Name="lblVehivlesReady" Content="Vehicles ready" HorizontalAlignment="Left" Margin="130,180,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="lstReadyVehicles" HorizontalAlignment="Left" Height="103" Margin="130,206,0,0" VerticalAlignment="Top" Width="377"/>
+        <Label x:Name="lblRegNumber" Content="Reg #" HorizontalAlignment="Left" Margin="130,23,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblBrand" Content="Brand" HorizontalAlignment="Left" Margin="176,23,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblModelYear" Content="Model Year" HorizontalAlignment="Left" Margin="222,23,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblOwnerName" Content="Owner Name" HorizontalAlignment="Left" Margin="427,23,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
