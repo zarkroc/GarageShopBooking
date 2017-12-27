@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace GarageShopBooking
 {
-    public enum ServiceLevel
+    public enum LiftType
     {
-        Large = 10000,
-        Medium = 5000,
-        Small = 1000,
-        Premium = 20000
+        Heavy,
+        Light
     }
 }

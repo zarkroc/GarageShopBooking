@@ -10,7 +10,7 @@ namespace GarageShopBooking
     {
         private int numOfSkids;
 
-        public TowedSled(string regNumber, string brand, string modelYear, Owner owner, int numOfSkids, string liftType) : base(regNumber, brand, modelYear, owner, liftType)
+        public TowedSled(string regNumber, string brand, string modelYear, Owner owner, int numOfSkids, LiftType liftType) : base(regNumber, brand, modelYear, owner, liftType)
         {
             this.NumOfSkids = numOfSkids;
         }

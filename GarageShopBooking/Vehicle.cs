@@ -8,9 +8,12 @@ namespace GarageShopBooking
 {
     class Vehicle
     {
-        private string regNumber, brand, modelYear, formattedDate, serviceLevel;
+        private string regNumber, brand, modelYear, formattedDate;
+        private ServiceLevel serviceLevel;
         private int milage, repairTime;
         private Owner owner;
+        private int price;
+        private int extraWork;
 
         public Vehicle(string regNumber, string brand, string modelYear,  Owner owner)
         {
@@ -18,6 +21,7 @@ namespace GarageShopBooking
             this.brand = brand;
             this.modelYear = modelYear;
             this.owner = owner;
+            this.extraWork = 0;
         }
 
         public int Milage { get => milage; set => milage = value; }
@@ -26,7 +30,29 @@ namespace GarageShopBooking
         public string Brand { get => brand; set => brand = value; }
         public string ModelYear { get => modelYear; set => modelYear = value; }
         public string FormattedDate { get => formattedDate; set => formattedDate = value; }
-        public string ServiceLevel { get => serviceLevel; set => serviceLevel = value; }
+        public ServiceLevel ServiceLevel { get => serviceLevel; set => serviceLevel = value; }
         public Owner Owner { get => owner; set => owner = value; }
+        public int Price
+        {
+            get
+            {
+                return (int)serviceLevel + extraWork;
+            }
+        }
+
+
+        public void AddWork(int price)
+        {
+            extraWork += price;    
+        }
+        public override string ToString()
+        {
+            return String.Format("{0,7}, {1,10} {1, 10}", regNumber, brand, owner.ToString());
+        }
+
+        public string DetailedInfo()
+        {
+            return regNumber + "\n" + brand + "\n" + modelYear + "\n" + owner.ToString() + "\n" + serviceLevel.ToString();
+        }
     }
 }

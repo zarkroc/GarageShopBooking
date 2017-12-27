@@ -5,28 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GarageShopBooking"
         mc:Ignorable="d"
-        Title="RegisterVehicle" Height="370.517" Width="300">
+        Title="RegisterVehicle" Height="423.932" Width="300">
     <Grid>
-        <Label x:Name="lblOwnerName" Content="Owner" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblRegNumber" Content="Reg Number" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblVehicleType" Content="Type of vehicle" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cboxVehicleType" HorizontalAlignment="Left" Margin="162,76,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.156,0.197" SelectionChanged="cboxVehicleType_SelectionChanged"/>
-        <TextBox x:Name="txtOwnerName" HorizontalAlignment="Left" Height="23" Margin="162,13,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtRegNumber" HorizontalAlignment="Left" Height="23" Margin="162,45,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnOK" Content="Ok" HorizontalAlignment="Left" Margin="114,310,0,0" VerticalAlignment="Top" Width="75" Click="btnOK_Click"/>
-        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="207,310,0,0" VerticalAlignment="Top" Width="75" Click="btnCancel_Click"/>
-        <Label x:Name="lblBrand" Content="Brand" HorizontalAlignment="Left" Margin="10,107,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblModelYear" Content="Model Year" HorizontalAlignment="Left" Margin="10,138,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.076,0.503"/>
-        <TextBox x:Name="txtBrand" HorizontalAlignment="Left" Height="23" Margin="162,110,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtModelYear" HorizontalAlignment="Left" Height="23" Margin="162,141,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="lblServiceLevel" Content="Service Level" HorizontalAlignment="Left" Margin="10,169,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cboxServiceLevel" HorizontalAlignment="Left" Margin="162,173,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="lblTires" Content="Tires" HorizontalAlignment="Left" Margin="10,200,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtTires" HorizontalAlignment="Left" Height="23" Margin="162,203,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="lblDoors" Content="Doors" HorizontalAlignment="Left" Margin="10,231,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtDoors" HorizontalAlignment="Left" Height="23" Margin="162,234,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="lblLift" Content="Lift type" HorizontalAlignment="Left" Margin="10,262,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtLiftType" HorizontalAlignment="Left" Height="23" Margin="162,265,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-
+        <Label x:Name="lblOwnerFistName" Content="Owner FistName" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" KeyboardNavigation.IsTabStop="False"/>
+        <Label x:Name="lblRegNumber" Content="Reg Number" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" KeyboardNavigation.IsTabStop="False"/>
+        <Label x:Name="lblVehicleType" Content="Type of vehicle" HorizontalAlignment="Left" Margin="10,102,0,0" VerticalAlignment="Top" KeyboardNavigation.IsTabStop="False"/>
+        <ComboBox x:Name="cboxVehicleType" HorizontalAlignment="Left" Margin="162,106,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.156,0.197" SelectionChanged="cboxVehicleType_SelectionChanged"/>
+        <TextBox x:Name="txtOwnerFirstName" HorizontalAlignment="Left" Height="23" Margin="162,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtOwnerLastName" HorizontalAlignment="Left" Height="23" Margin="162,41,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtRegNumber" HorizontalAlignment="Left" Height="23" Margin="162,75,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblBrand" Content="Brand" HorizontalAlignment="Left" Margin="10,137,0,0" VerticalAlignment="Top" KeyboardNavigation.IsTabStop="False"/>
+        <Label x:Name="lblModelYear" Content="Model Year" HorizontalAlignment="Left" Margin="10,168,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.076,0.503" KeyboardNavigation.IsTabStop="False"/>
+        <TextBox x:Name="txtBrand" HorizontalAlignment="Left" Height="23" Margin="162,140,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtModelYear" HorizontalAlignment="Left" Height="23" Margin="162,171,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblServiceLevel" Content="Service Level" HorizontalAlignment="Left" Margin="10,199,0,0" VerticalAlignment="Top" KeyboardNavigation.IsTabStop="False"/>
+        <ComboBox x:Name="cboxServiceLevel" HorizontalAlignment="Left" Margin="162,203,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblTires" Content="Tires" HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top" KeyboardNavigation.IsTabStop="False"/>
+        <TextBox x:Name="txtTires" HorizontalAlignment="Left" Height="23" Margin="162,233,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblDoors" Content="Doors" HorizontalAlignment="Left" Margin="10,261,0,0" VerticalAlignment="Top" KeyboardNavigation.IsTabStop="False"/>
+        <TextBox x:Name="txtDoors" HorizontalAlignment="Left" Height="23" Margin="162,264,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblLift" Content="Lift type" HorizontalAlignment="Left" Margin="10,292,0,0" VerticalAlignment="Top" KeyboardNavigation.IsTabStop="False"/>
+        <Label x:Name="lblOwnerLastName" Content="Owner LastName" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" KeyboardNavigation.IsTabStop="False"/>
+        <ComboBox x:Name="cboxLiftType" HorizontalAlignment="Left" Margin="162,296,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnOK" Content="Ok" HorizontalAlignment="Left" Margin="114,353,0,0" VerticalAlignment="Top" Width="75" Click="btnOK_Click"/>
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="207,353,0,0" VerticalAlignment="Top" Width="75" Click="btnCancel_Click"/>
     </Grid>
 </Window>

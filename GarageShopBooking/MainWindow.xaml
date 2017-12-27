@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GarageShopBooking"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525" MinWidth="525" MinHeight="350">
     <Grid>
         <Button x:Name="btnRegisterVehicle" Content="Register Vehicle" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="94" Click="btnRegisterVehicle_Click"/>
         <Button x:Name="btnAddWorkDone" Content="Add Work Done" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Width="94" Click="btnAddWorkDone_Click"/>

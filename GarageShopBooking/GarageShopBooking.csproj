@@ -34,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -56,6 +57,7 @@
     </ApplicationDefinition>
     <Compile Include="Car.cs" />
     <Compile Include="GarageShop.cs" />
+    <Compile Include="LiftType.cs" />
     <Compile Include="MotorCycle.cs" />
     <Compile Include="Owner.cs" />
     <Compile Include="RegisterVehicle.xaml.cs">
