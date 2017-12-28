@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GarageShopBooking"
         mc:Ignorable="d"
+        Closing="Window_Closing"
         Title="MainWindow" Height="350" Width="525" MinWidth="525" MinHeight="350">
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="#FF6E00FF"/>
+                <GradientStop Color="#FFECECF8" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Button x:Name="btnRegisterVehicle" Content="Register Vehicle" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="94" Click="btnRegisterVehicle_Click"/>
         <Button x:Name="btnAddWorkDone" Content="Add Work Done" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Width="94" Click="btnAddWorkDone_Click"/>
         <Button x:Name="btnInfoVehicle" Content="Info Vehicle" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" Width="94" Click="btnInfoVehicle_Click"/>

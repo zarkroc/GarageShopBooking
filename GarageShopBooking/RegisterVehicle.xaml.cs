@@ -56,6 +56,9 @@ namespace GarageShopBooking
         {
             if (cboxVehicleType.SelectedIndex > -1)
             {
+                /// Perform different actions depending on what Vehicle type is selected.
+                /// Some parts are common for all.
+                /// TODO: Find a better solution to do this, where duplicated code can be avoided.
                 VehicleTypes vehicleType = (VehicleTypes)Enum.Parse(typeof(VehicleTypes), cboxVehicleType.SelectedValue.ToString(), true);
                 if (vehicleType == VehicleTypes.Trailer)
                 {

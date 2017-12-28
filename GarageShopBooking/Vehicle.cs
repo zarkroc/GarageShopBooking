@@ -35,7 +35,7 @@ namespace GarageShopBooking
         /// <param name="owner"></param>
         public Vehicle(string regNumber, string brand, string modelYear,  Owner owner)
         {
-            this.regNumber = regNumber;
+            this.regNumber = regNumber.ToLower(); ;
             this.brand = brand;
             this.modelYear = modelYear;
             this.owner = owner;
@@ -52,7 +52,14 @@ namespace GarageShopBooking
             }
         }
         public int RepairTime { get => repairTime; set => repairTime = value; }
-        public string RegNumber { get => regNumber; set => regNumber = value; }
+        /// <summary>
+        /// Converts the regnumber to lowecase.
+        /// </summary>
+        public string RegNumber { get => regNumber; set
+            {
+                regNumber = value.ToLower(); ;
+            }
+        }
         public string Brand { get => brand; set => brand = value; }
         public string ModelYear { get => modelYear; set => modelYear = value; }
         public string FormattedDate { get => formattedDate; set => formattedDate = value; }

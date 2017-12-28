@@ -1,18 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
+﻿using System.Windows;
+/// <summary>
+/// Author: Tomas Perers
+/// Date: 2017-12-28
+/// </summary>
 namespace GarageShopBooking
 {
     /// <summary>
@@ -23,19 +13,31 @@ namespace GarageShopBooking
         RegisterVehicle registerVehicle;
         GarageShop garageShop;
 
+        /// <summary>
+        /// Create a new RegisterVehicle and GarageShop object.
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
             registerVehicle = new RegisterVehicle();
             garageShop = new GarageShop();
+            garageShop.RestoreLists();
             InitializeGUI();
+            UpdateGUI();
         }
 
+        /// <summary>
+        /// Clear the interface.
+        /// </summary>
         private void InitializeGUI()
         {
             lstReadyVehicles.Items.Clear();
             lstVehicles.Items.Clear();
         }
+
+        /// <summary>
+        /// Update the both lists with information about registered vehicles.
+        /// </summary>
         private void UpdateGUI()
         {
             lstReadyVehicles.Items.Clear();
@@ -50,6 +52,11 @@ namespace GarageShopBooking
             }
         }
 
+        /// <summary>
+        /// Add a vehicle when button is clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRegisterVehicle_Click(object sender, RoutedEventArgs e)
         {
             registerVehicle = new RegisterVehicle();
@@ -62,6 +69,13 @@ namespace GarageShopBooking
             
         }
 
+        /// <summary>
+        /// Add extra cost for work done when button is clicked.
+        /// Use a VisualBasic input box.
+        /// TODO: Implement a prettier window and add what work has been performed as well.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddWorkDone_Click(object sender, RoutedEventArgs e)
         {
             if (lstVehicles.SelectedIndex >= 0)
@@ -81,6 +95,7 @@ namespace GarageShopBooking
 
         /// <summary>
         /// Use a Visual Basic component instead of creating a new WPF form to handle the input message box.
+        /// TODO: Make a prettier window to handle the search function. Perhaps even an option to search on owner name as well?
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -94,6 +109,11 @@ namespace GarageShopBooking
                 MessageBox.Show(vehicle.ToString());
         }
 
+        /// <summary>
+        /// Move the selected vehicle to the list of ready vehicles.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnVehicleReady_Click(object sender, RoutedEventArgs e)
         {
             if (lstVehicles.SelectedIndex >= 0)
@@ -105,6 +125,11 @@ namespace GarageShopBooking
                 MessageBox.Show("No vehicle selected");
         }
 
+        /// <summary>
+        /// Checkout and display the price for work that has been done on the car.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCheckoutVehicle_Click(object sender, RoutedEventArgs e)
         {
             if (lstReadyVehicles.SelectedIndex >= 0)
@@ -114,6 +139,11 @@ namespace GarageShopBooking
             }
             else
                 MessageBox.Show("No vehicle selected");
+        }
+
+        private void Window_Closing(object sender, System.EventArgs e)
+        {
+            garageShop.SaveLists();
         }
     }
 }
