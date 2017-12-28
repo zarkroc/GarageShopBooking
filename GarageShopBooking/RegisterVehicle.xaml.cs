@@ -15,6 +15,9 @@ namespace GarageShopBooking
 
         internal Vehicle Vehicle { get => vehicle; }
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public RegisterVehicle()
         {
             InitializeComponent();
@@ -22,6 +25,9 @@ namespace GarageShopBooking
             InitalizeGUI();
         }
 
+        /// <summary>
+        /// Initialize the GUI.
+        /// </summary>
         private void InitalizeGUI()
         {
             txtOwnerFirstName.Text = String.Empty;
@@ -41,6 +47,11 @@ namespace GarageShopBooking
             txtMilage.Visibility = Visibility.Hidden;
         }
 
+        /// <summary>
+        /// Creates a vehicle object and reads the input and sets the values.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
             if (cboxVehicleType.SelectedIndex > -1)
@@ -133,7 +144,6 @@ namespace GarageShopBooking
                         MessageBox.Show("You need to specifye a model year");
 
                     MotorCycle mc = vehicle as MotorCycle;
-                    mc.LiftType = ReadLiftType();
                     mc.Tires = ReadTires();
                     vehicle = mc;
                     if (int.TryParse(txtMilage.Text, out int milage))
@@ -150,11 +160,20 @@ namespace GarageShopBooking
                 MessageBox.Show("You need to select a  Vehicle type");
         }
 
+        /// <summary>
+        /// Close the window if cancel is clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Reads the owner name and creates an owner object.
+        /// </summary>
+        /// <returns></returns>
         private bool ReadOwnerName()
         {
             if (! String.IsNullOrEmpty(txtOwnerFirstName.Text) && ! String.IsNullOrEmpty(txtOwnerLastName.Text))
@@ -167,6 +186,10 @@ namespace GarageShopBooking
                 return false;
         }
 
+        /// <summary>
+        /// Reads the reg number
+        /// </summary>
+        /// <returns></returns>
         private bool ReadRegNumber()
         {
             if (!String.IsNullOrEmpty(txtRegNumber.Text))
@@ -178,6 +201,10 @@ namespace GarageShopBooking
                 return false;
         }
             
+        /// <summary>
+        /// Tries to read the model year.
+        /// </summary>
+        /// <returns></returns>
         private bool ReadModelYear()
         {
             if (! String.IsNullOrEmpty(txtModelYear.Text))
@@ -189,6 +216,10 @@ namespace GarageShopBooking
                 return false;
         }
 
+        /// <summary>
+        /// Tries to read the brand.
+        /// </summary>
+        /// <returns></returns>
         private bool ReadBrand()
         {
             if (!String.IsNullOrEmpty(txtBrand.Text))
@@ -200,6 +231,10 @@ namespace GarageShopBooking
                 return false;
         }
 
+        /// <summary>
+        /// Tries to parse the number of tires
+        /// </summary>
+        /// <returns></returns>
         private int ReadTires()
         {
             if (int.TryParse(txtTires.Text, out int numTires))
@@ -210,6 +245,10 @@ namespace GarageShopBooking
                 return -1;
         }
 
+        /// <summary>
+        /// Read the lifttype, if nothing was selected, return a Heavy lifttype.
+        /// </summary>
+        /// <returns></returns>
         private LiftType ReadLiftType()
         {
             if (cboxLiftType.SelectedIndex >= 0)
@@ -220,6 +259,10 @@ namespace GarageShopBooking
                 return LiftType.Heavy;
         }
 
+        /// <summary>
+        /// Tries to parse the number of skids (instead of tires)
+        /// </summary>
+        /// <returns></returns>
         private int ReadNumOfSkids()
         {
             if (int.TryParse(txtTires.Text, out int numSkids))
@@ -230,6 +273,10 @@ namespace GarageShopBooking
                 return -1;
         }
 
+        /// <summary>
+        /// Reads the numbers of doors, try to parse it, if not return -1
+        /// </summary>
+        /// <returns>int number of doors</returns>
         private int ReadDoors()
         {
             if (int.TryParse(txtTires.Text, out int numDoors))
@@ -242,8 +289,9 @@ namespace GarageShopBooking
 
         /// <summary>
         /// Hard coded for now.
+        /// Returns one height for a car another for a truck and a third one for everything else.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>double height of vehicle</returns>
         private double ReadHeight()
         {
             if (vehicleType == VehicleTypes.Car)
@@ -254,6 +302,13 @@ namespace GarageShopBooking
                 return 1.5;
         }
 
+        /// <summary>
+        /// Hide different textBoxes and Labels based on what vehicle type is selected.
+        /// And renames tires for skids for towed sled.
+        /// TODO: Implement a better solution.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cboxVehicleType_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             vehicleType = (VehicleTypes)Enum.Parse(typeof(VehicleTypes), cboxVehicleType.SelectedValue.ToString(), true);
