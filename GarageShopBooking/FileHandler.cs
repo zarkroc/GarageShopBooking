@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.IO;
 /// <summary>
 /// Author: Tomas Perers
